@@ -2,3 +2,4 @@
 #Java project files
 .project
 .settings
+.classpath
