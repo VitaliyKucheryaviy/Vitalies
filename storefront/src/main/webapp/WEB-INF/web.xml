@@ -6,7 +6,28 @@
 
         <display-name>Example App</display-name> 
         <description>A web.xml example</description> 
+        
+          <context-param> 
+		    <param-name>contextConfigLocation</param-name>
+		    <param-value>WEB-INF/spring/application.xml</param-value>
+		  </context-param>
+		
+		  <listener> 
+		    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+		  </listener>
        
+       
+		  <servlet>
+		    <servlet-name>vitalies</servlet-name>
+		    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		    <load-on-startup>1</load-on-startup>
+		  </servlet>
+		  
+		   <servlet-mapping>
+		    <servlet-name>vitalies</servlet-name>
+		    <url-pattern>/vitalies/*</url-pattern>
+		  </servlet-mapping>
+           
         <error-page> 
             <error-code>404</error-code> 
             <location>/error.jsp</location> 
